@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="page-header-container">Home</div>
+    <div class="page-header-container">Notifications</div>
   </div>
 </template>
 
