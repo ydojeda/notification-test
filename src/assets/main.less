@@ -1,0 +1,41 @@
+// Dimensions
+@footer-height-dim: 70px;
+@header-height-dim: 70px;
+@border-xs-dim: 1px;
+@border-s-dim: 2px;
+
+// Font Sizes
+@font-size-xs: 12px;
+@font-size-s: 14px;
+@font-size-m: 16px;
+@font-size-l: 18px;
+@font-size-xl: 20px;
+@font-size-xxl: 24px;
+
+// Colors
+@light-purple-color: #bfadde;
+
+.page-header-container {
+  height: @header-height-dim;
+  border-bottom: @border-s-dim solid @light-purple-color;
+  font-size: @font-size-xl;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  font-weight: 500;
+  background: inherit;
+}
+
+.page-content-container {
+  position: fixed;
+  top: @header-height-dim;
+  left: 0px;
+  bottom: @footer-height-dim;
+  right: 0px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
