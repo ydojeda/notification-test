@@ -3,6 +3,7 @@
 @header-height-dim: 70px;
 @border-xs-dim: 1px;
 @border-s-dim: 2px;
+@avatar-dim: 40px;
 
 // Font Sizes
 @font-size-xs: 12px;
@@ -13,11 +14,17 @@
 @font-size-xxl: 24px;
 
 // Colors
+@white-color: #ffffff;
 @light-purple-color: #bfadde;
+
+// spacing
+@spacing-xs: 4px;
+@spacing-s: 8px;
+@spacing-m: 16px;
 
 .page-header-container {
   height: @header-height-dim;
-  border-bottom: @border-s-dim solid @light-purple-color;
+  border-bottom: @border-xs-dim solid @light-purple-color;
   font-size: @font-size-xl;
   position: fixed;
   top: 0;
@@ -39,3 +46,4 @@
   overflow-y: scroll;
   scrollbar-width: none;
 }
+
