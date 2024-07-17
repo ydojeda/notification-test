@@ -1,19 +1,5 @@
 # notification-test
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
 ## Project Setup
 
 ```sh
@@ -37,3 +23,13 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Task
+
+- [x] Load the list of notifications from provided end point\
+- [x] Create a scrollable list to display notifications
+- [x] Show an avatar icon with initials and a random solid color
+- [x] Show a small dot to indicate unread notifications
+- [] When clicking on a specific notification:
+  - check the action if `CREATE_TODO` is available
+  - if so, call the mock-action endpoint
