@@ -51,3 +51,31 @@ export const getNotifications = async (): Promise<NotificationsReturn> => {
       return returnValue
     })
 }
+
+export const createToDo = async (id: string): Promise<ResponseBase> => {
+  const returnValue = {
+    success: false,
+    message: ''
+  } as ResponseBase
+  return fetch('https://testau.asknice.ly/api/v1/candidate-test/mock-action', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ id, action: 'TODO' })
+  })
+    .then((res) => {
+      if (res.status === 200) {
+        // TODO handle response
+        return returnValue
+      }
+      // handle non-200
+      returnValue.message = 'Failed to create todo'
+      return returnValue
+    })
+    .catch(() => {
+      // handle failed request
+      returnValue.message = 'Failed to create todo'
+      return returnValue
+    })
+}

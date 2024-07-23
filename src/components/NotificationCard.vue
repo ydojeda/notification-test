@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container">
+  <div class="card-container" @click="onPressCreateToDo">
     <div v-if="!props.data.read" class="read-indicator-container">
       <div class="read-indicator"></div>
     </div>
@@ -18,12 +18,27 @@
 </template>
 
 <script setup lang="ts">
-import type { NotificationInfo } from '@/api/notifications'
+import { createToDo, type NotificationInfo } from '@/api/notifications'
 import AvatarIcon from './AvatarIcon.vue'
+import { ref } from 'vue'
 
 const props = defineProps<{
   data: NotificationInfo
 }>()
+
+const isLoadingAction = ref(false)
+
+// creating todo when pressing the card
+const onPressCreateToDo = async () => {
+  // Don't do anything if to do action is available or if action has already been initiated
+  if (isLoadingAction.value || !props.data.available_actions.includes('CREATE_TODO')) {
+    return
+  }
+  isLoadingAction.value = true
+  // actionResponse: for potentially handling success or failed creation
+  const actionResponse = await createToDo(props.data.id)
+  isLoadingAction.value = false
+}
 </script>
 
 <style scoped lang="less">
