@@ -9,11 +9,13 @@ const props = defineProps<{
   name: string
 }>()
 
+// get first letter of first name and last name as a string
 const getInitials = (name: string): string => {
   const names = name.split(' ')
   return (names[0]?.[0] ?? '') + (names[1]?.[0] ?? '')
 }
 
+// assign background color according to user's initials
 const getBackgroundColor = (name: string): string => {
   const initials = getInitials(name)
   var hash = 0

@@ -18,13 +18,18 @@ import { getNotifications, type NotificationInfo } from '@/api/notifications'
 import NotificationCard from '@/components/NotificationCard.vue'
 import { ref } from 'vue'
 
+// list of notification objects
 const notifications = ref<NotificationInfo[]>([])
+// display error or empty
 const message = ref('')
+// for fetching notifications
 const isLoading = ref(true)
 
+// call endpoint for list of notifications
 const fetchData = async () => {
   const data = await getNotifications()
   notifications.value = data.data
+  // assign message if empty or in
   const noNotifsMessage = data.data.length ? '' : 'No notifications to show'
   message.value = data.success ? noNotifsMessage : data.message
   isLoading.value = false
